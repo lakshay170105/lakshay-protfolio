@@ -2,49 +2,143 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>LSHAY7MEDIA | Lakshay Sharma Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
     body { font-family: 'Segoe UI', sans-serif; background: #0e0e0e; color: #fff; }
-    header, footer { background: #111; padding: 20px; text-align: center; }
-    nav a { margin: 0 10px; color: #ccc; text-decoration: none; }
-    nav a:hover { color: #fff; }
-    .hero {
-      background: url('https://via.placeholder.com/1200x500') center/cover no-repeat;
-      height: 500px;
-      display: flex; justify-content: center; align-items: center;
-      flex-direction: column;
+
+    header, footer {
+      background: #111;
+      padding: 20px;
       text-align: center;
     }
-    .hero h1 { font-size: 3em; color: #fff; }
-    .hero p { font-size: 1.2em; margin-top: 10px; color: #aaa; }
-    section { padding: 60px 20px; max-width: 1100px; margin: auto; }
-    h2 { font-size: 2em; margin-bottom: 20px; text-align: center; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+
+    nav a {
+      margin: 0 10px;
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #00ffcc;
+    }
+
+    .hero {
+      background: url('https://i.imgur.com/fcQJwXR.jpg') center/cover no-repeat;
+      height: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .hero h1 {
+      font-size: 3em;
+      color: #fff;
+      text-shadow: 2px 2px #000;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      margin-top: 10px;
+      color: #aaa;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+      animation: fadeIn 1.5s ease;
+    }
+
+    h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
     .card {
-      background: #1a1a1a; padding: 20px; border-radius: 10px;
-      transition: transform 0.3s;
+      background: #1a1a1a;
+      padding: 20px;
+      border-radius: 10px;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
-    .card:hover { transform: translateY(-5px); }
-    .card img { width: 100%; border-radius: 10px; margin-bottom: 10px; }
-    .testimonial { background: #191919; padding: 20px; border-left: 4px solid #00ffcc; }
-    footer p { font-size: 0.9em; color: #999; }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px #00ffcc55;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .testimonial {
+      background: #191919;
+      padding: 20px;
+      border-left: 4px solid #00ffcc;
+    }
+
+    footer p {
+      font-size: 0.9em;
+      color: #999;
+    }
+
     .contact-form input, .contact-form textarea {
-      width: 100%; padding: 10px; margin: 10px 0; background: #222; color: #fff;
-      border: none; border-radius: 5px;
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      background: #222;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
     }
+
     .contact-form button {
-      background: #00ffcc; color: #000; padding: 10px 20px; border: none;
-      border-radius: 5px; cursor: pointer; font-weight: bold;
+      background: #00ffcc;
+      color: #000;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
     }
+
+    .contact-form button:hover {
+      background: #00ddaa;
+    }
+
     .slideshow {
-      max-width: 100%; margin-bottom: 40px; overflow: hidden; border-radius: 10px;
+      max-width: 100%;
+      margin-bottom: 40px;
+      overflow: hidden;
+      border-radius: 10px;
     }
+
     .slideshow img {
-      width: 100%; animation: slide 10s infinite;
+      width: 100%;
+      animation: slide 10s infinite;
     }
+
     @keyframes slide {
       0% { opacity: 0; }
       10% { opacity: 1; }
@@ -52,6 +146,7 @@
       40% { opacity: 0; }
       100% { opacity: 0; }
     }
+
     .download-btn {
       display: inline-block;
       margin-top: 20px;
@@ -63,9 +158,16 @@
       text-decoration: none;
       font-weight: bold;
     }
+
+    ul li {
+      list-style: none;
+      margin: 10px 0;
+      font-size: 1.1em;
+    }
   </style>
 </head>
 <body>
+
   <header>
     <h1>LSHAY7MEDIA</h1>
     <nav>
@@ -91,26 +193,26 @@
   <section id="projects">
     <h2>Projects Showcase</h2>
     <div class="slideshow">
-      <img src="https://via.placeholder.com/1200x400/333/fff?text=Visualizer+Project" alt="Slideshow">
+      <img src="https://i.imgur.com/47DbJoL.jpeg" alt="Visualizer Project">
     </div>
     <div class="grid">
       <div class="card">
-        <img src="https://via.placeholder.com/400x250" alt="Visualizer">
+        <img src="https://i.imgur.com/7G6N69g.jpeg" alt="Visualizer">
         <h3>L-SHAY Music Visualizer</h3>
         <p>A web app to generate music visualizers with login, templates, and downloads.</p>
       </div>
       <div class="card">
-        <img src="https://via.placeholder.com/400x250" alt="Poster">
+        <img src="https://i.imgur.com/VNKLYDt.jpeg" alt="Poster">
         <h3>Poster Designs</h3>
         <p>Posters for music events, YouTube releases, and promotional campaigns.</p>
       </div>
       <div class="card">
-        <img src="https://via.placeholder.com/400x250" alt="Lyrics Video">
+        <img src="https://i.imgur.com/Q1xYrEl.jpeg" alt="Lyrics Video">
         <h3>Lyrical Videos</h3>
         <p>Emotional and rhythm-synced video edits for independent songs and raps.</p>
       </div>
       <div class="card">
-        <img src="https://via.placeholder.com/400x250" alt="Lyrics Edit">
+        <img src="https://i.imgur.com/3xQQPJU.jpeg" alt="Lyrics Edit">
         <h3>Lyrics Sync & Edits</h3>
         <p>Perfectly synced subtitles and lyrics for visual impact.</p>
       </div>
@@ -146,17 +248,38 @@
 
   <section id="contact">
     <h2>Contact Me</h2>
-    <form class="contact-form">
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea rows="5" placeholder="Your Message" required></textarea>
+    <form class="contact-form" onsubmit="sendEmail(event)">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Your Email" required />
+      <textarea rows="5" id="message" placeholder="Your Message" required></textarea>
       <button type="submit">Send Message</button>
     </form>
   </section>
 
   <footer>
     <p>© 2025 Lakshay Sharma | imlakshaysharma1</p>
-    <p>Follow: Instagram | YouTube | GitHub</p>
+    <p>Follow: <a href="#">Instagram</a> | <a href="#">YouTube</a> | <a href="#">GitHub</a></p>
   </footer>
+
+  <!-- EmailJS Script -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+  <script>
+    emailjs.init("YOUR_USER_ID"); // Replace with your EmailJS user ID
+
+    function sendEmail(e) {
+      e.preventDefault();
+      emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+        from_name: document.getElementById("name").value,
+        from_email: document.getElementById("email").value,
+        message: document.getElementById("message").value
+      }).then(() => {
+        alert("Message sent to Lakshay Sharma!");
+      }).catch(err => {
+        alert("Failed to send message. Try again.");
+        console.error(err);
+      });
+    }
+  </script>
 </body>
 </html>
+

@@ -3,55 +3,97 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lakshay Sharma Portfolio</title>
+  <title>LSHAY7MEDIA | Lakshay Sharma Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
     body { font-family: 'Segoe UI', sans-serif; background: #0e0e0e; color: #fff; }
     header, footer { background: #111; padding: 20px; text-align: center; }
-    nav a { margin: 0 10px; color: #ccc; text-decoration: none; }
-    nav a:hover { color: #fff; }
+    nav a {
+      margin: 0 15px; color: #ccc; text-decoration: none;
+      font-weight: bold; transition: 0.3s ease;
+    }
+    nav a:hover { color: #00ffcc; }
+
     .hero {
-      background: url('https://via.placeholder.com/1200x500') center/cover no-repeat;
+      background: url('https://i.postimg.cc/fWcyRYvd/official-banner.jpg') center/cover no-repeat;
       height: 500px;
       display: flex; justify-content: center; align-items: center;
-      flex-direction: column;
-      text-align: center;
+      flex-direction: column; text-align: center;
     }
-    .hero h1 { font-size: 3em; color: #fff; }
-    .hero p { font-size: 1.2em; margin-top: 10px; color: #aaa; }
+    .hero h1 { font-size: 3em; color: #fff; animation: fadeIn 2s ease; }
+    .hero p { font-size: 1.2em; margin-top: 10px; color: #aaa; animation: fadeIn 3s ease; }
+
     section { padding: 60px 20px; max-width: 1100px; margin: auto; }
-    h2 { font-size: 2em; margin-bottom: 20px; text-align: center; }
+    h2 { font-size: 2em; margin-bottom: 20px; text-align: center; color: #00ffcc; }
+
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+
     .card {
       background: #1a1a1a; padding: 20px; border-radius: 10px;
-      transition: transform 0.3s;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .card:hover { transform: translateY(-5px); }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 20px rgba(0,255,204,0.2);
+    }
     .card img { width: 100%; border-radius: 10px; margin-bottom: 10px; }
-    .testimonial { background: #191919; padding: 20px; border-left: 4px solid #00ffcc; }
-    footer p { font-size: 0.9em; color: #999; }
+
+    .card a.run-btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 16px;
+      background: #00ffcc;
+      color: #000;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: 0.3s ease;
+    }
+    .card a.run-btn:hover {
+      background: #00e6b8;
+    }
+
+    .testimonial {
+      background: #191919;
+      padding: 20px;
+      border-left: 4px solid #00ffcc;
+      font-style: italic;
+    }
+
     .contact-form input, .contact-form textarea {
-      width: 100%; padding: 10px; margin: 10px 0; background: #222; color: #fff;
+      width: 100%; padding: 10px; margin: 10px 0;
+      background: #222; color: #fff;
       border: none; border-radius: 5px;
     }
     .contact-form button {
-      background: #00ffcc; color: #000; padding: 10px 20px; border: none;
-      border-radius: 5px; cursor: pointer; font-weight: bold;
+      background: #00ffcc; color: #000;
+      padding: 10px 20px; border: none;
+      border-radius: 5px; cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s ease;
     }
+    .contact-form button:hover {
+      background: #00e6b8;
+    }
+
     .slideshow {
       max-width: 100%; margin-bottom: 40px; overflow: hidden; border-radius: 10px;
     }
     .slideshow img {
-      width: 100%; animation: slide 10s infinite;
+      width: 100%; animation: slide 10s infinite ease-in-out;
     }
+
     @keyframes slide {
-      0% { opacity: 0; }
-      10% { opacity: 1; }
-      30% { opacity: 1; }
-      40% { opacity: 0; }
-      100% { opacity: 0; }
+      0%, 100% { opacity: 0; }
+      10%, 90% { opacity: 1; }
     }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     .download-btn {
       display: inline-block;
       margin-top: 20px;
@@ -63,9 +105,12 @@
       text-decoration: none;
       font-weight: bold;
     }
+
+    footer p { font-size: 0.9em; color: #999; margin: 5px 0; }
   </style>
 </head>
 <body>
+
   <header>
     <h1>LSHAY7MEDIA</h1>
     <nav>
@@ -91,28 +136,35 @@
   <section id="projects">
     <h2>Projects Showcase</h2>
     <div class="slideshow">
-      <img src="https://via.placeholder.com/1200x400/333/fff?text=Visualizer+Project" alt="Slideshow">
+      <img src="https://i.postimg.cc/Y9C9jvh6/slideshow1.jpg" alt="Slideshow">
     </div>
     <div class="grid">
       <div class="card">
-        <img src="https://via.placeholder.com/400x250" alt="Visualizer">
+        <img src="https://i.postimg.cc/yYxRwKNZ/music-visualizer.jpg" alt="Visualizer">
         <h3>L-SHAY Music Visualizer</h3>
         <p>A web app to generate music visualizers with login, templates, and downloads.</p>
+        <a class="run-btn" href="https://music-visualizer-by-lshay.netlify.app/" target="_blank">Run Visualizer</a>
       </div>
+
       <div class="card">
-        <img src="https://www.instagram.com/p/DGsLYQDS6CV/" alt="Poster">
-        <h3>Poster Designs</h3>
-        <p>Posters for music events, YouTube releases, and promotional campaigns.</p>
-      </div>
-      <div class="card">
-        <img src="https://www.instagram.com/p/DK_-W2_yI0X/" alt="Lyrics Video">
+        <img src="https://i.postimg.cc/6qDgk9dG/lyrics-video.jpg" alt="Lyrics Video">
         <h3>Lyrical Videos</h3>
         <p>Emotional and rhythm-synced video edits for independent songs and raps.</p>
+        <a class="run-btn" href="https://www.instagram.com/reel/DMIwvNuvi7D/" target="_blank">Run Video</a>
       </div>
+
       <div class="card">
-        <img src="https://www.instagram.com/reel/DMIwvNuvi7D/" alt="Lyrics Edit">
+        <img src="https://i.postimg.cc/cCmcKN8D/lyrics-edit.jpg" alt="Lyrics Edit">
         <h3>Lyrics Sync & Edits</h3>
         <p>Perfectly synced subtitles and lyrics for visual impact.</p>
+        <a class="run-btn" href="https://www.instagram.com/p/DK_-W2_yI0X/" target="_blank">Run Edit</a>
+      </div>
+
+      <div class="card">
+        <img src="https://i.postimg.cc/DZ2Z6mYp/poster.jpg" alt="Poster">
+        <h3>Poster Designs</h3>
+        <p>Posters for music events, YouTube releases, and promotional campaigns.</p>
+        <a class="run-btn" href="https://www.instagram.com/p/DIbxLW5ST-x/" target="_blank">Run Poster</a>
       </div>
     </div>
   </section>
@@ -152,11 +204,13 @@
       <textarea rows="5" placeholder="Your Message" required></textarea>
       <button type="submit">Send Message</button>
     </form>
+    <p style="text-align:center; margin-top: 10px;">Or email me directly at <strong>lakshaysharma1701005@gmail.com</strong></p>
   </section>
 
   <footer>
     <p>© 2025 Lakshay Sharma | imlakshaysharma1</p>
-    <p>Follow: Instagram | YouTube | GitHub</p>
+    <p>Follow: <a href="https://www.instagram.com/imlakshaysharma1" target="_blank" style="color:#00ffcc;">Instagram</a> | YouTube | GitHub</p>
   </footer>
+
 </body>
 </html>
